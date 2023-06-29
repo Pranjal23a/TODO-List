@@ -3,11 +3,13 @@ const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
 
-console.log("Working");
+// console.log("Working");
 
 function addTaskToDOM(task) {
   const li = document.createElement("li");
-  li.innerHTML = `<input type="checkbox" id="${task.id}" ${task.done ? 'checked' : ''} data-id="${task.id}" class="custom-checkbox">
+  li.innerHTML = `<input type="checkbox" id="${task.id}" ${
+    task.done ? 'checked' : ''
+  } class="custom-checkbox">
   <label for="${task.id}">${task.text}</label>
   <img src="bin.svg" class="delete" data-id="${task.id}" />`;
 
@@ -19,6 +21,7 @@ function renderList() {
   for (let i = 0; i < tasks.length; i++) {
     addTaskToDOM(tasks[i]);
   }
+  tasksCounter.innerHTML= tasks.length;
 }
 
 function toggleTask(taskId) {
@@ -28,7 +31,6 @@ function toggleTask(taskId) {
   if (newTasks1.length > 0) {
     const currentTask = newTasks1[0];
     currentTask.done = !currentTask.done;
-    tasks = newTasks1;
     renderList();
     showNotification("Task Completed Successfully!!");
     return;
@@ -84,10 +86,8 @@ function handleClickListner(e) {
     const taskId = target.id;
     toggleTask(taskId);
     return;
-  }
-  else if(target.className === "delete")
-  {
-    const taskId= target.dataset.id;
+  } else if (target.className === "delete") {
+    const taskId = target.dataset.id;
     deleteTask(taskId);
     return;
   }
