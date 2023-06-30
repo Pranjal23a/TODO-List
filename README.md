@@ -1,5 +1,5 @@
 # TODO-List
-https://649d8eab67bdad11abff470c--stupendous-liger-048767.netlify.app/
+https://add-list-todo.netlify.app/
 
 - Functionality Included
 	- Add a TODO
