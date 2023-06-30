@@ -1,5 +1,5 @@
 # TODO-List
-https://add-list-todo.netlify.app/
+https://pranjal-todo-list.netlify.app/
 
 - Functionality Included
 	- Add a TODO
